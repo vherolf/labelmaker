@@ -1,26 +1,26 @@
 # labelmaker
 
-(only working proof of concept so far)
+(its only a working proof of concept so far)
 
 ## About
  
-Its a simple Flask webapp to generate/print labels and tapes with the DYMO LabelWriter® Duo 450. 
+Its a simple Flask/Python3 webapp to generate/print labels and tapes with the DYMO LabelWriter® Duo 450. 
 The DYMO Labelwriter® Duo 450 works well under Linux/MacOSX with CUPS.
 
 Idea is to make a webapp that generate dynamic pdfs (in lengths) with fixed height for Tapes.
-and send send it to printer with ldr command
+and send it to printer with the lpr command
 
 e.g.
 
   lpr -o PageSize=9_mm__1___Label__Auto -o PrintQuality=Text text_to_print.pdf -P LabelWriter-450-DUO-Tape
 
-This code should work under Linux and MacOSX with python 3.4+
+This code should work under Linux/MacOSX with python 3.4+
 
 DISCLAIMER: 
 
 I dont have any knowledge of other label printers.
 
-With small adaptions and depending on your labelmaker oder tape printer it should work with most DYMO printers. (I have only one so its not tested)
+With small adaptions and depending on your label/tape printer - it should work with most DYMO printers. (I have only one, so its not tested with others)
 
 You are on your own with other printers, but ideas are welcome.
 
@@ -29,9 +29,11 @@ If I violate any naming convention or already reserved trade names - please let 
 
 ## Installation and running
 
-Install some virtual environment as venv or (ana)conda
+Install your DYMO Labelwriter 450 DUO CUPS drivers and plug it in.
 
-Switch to the virtual environment and run 
+Install some python3 virtual environment such as venv or (ana)conda
+
+Switch to the python3 virtual environment and run 
 
 pip install -r requirements.txt
 
@@ -60,13 +62,18 @@ Maybe deployed on a small print server (like a raspy or similar)
 
 Fourth step would be to produce QR and barcode to add in tapes and labels.
 
+Make the labels more fancy in style.
+
+pimp it with a style sheet
+
+Implement a printer detector and switcher to make it easier - maybe...
 
 ## Credits
 
-the idea to generate variable pdf and send it to the printer is from the perlmeister himself - Michael Schilli
+The idea to generate variable pdf and send it to the printer is from the perlmeister himself - Michael Schilli
 http://www.linux-magazin.de/ausgaben/2015/12/perl-snapshot/
 
-the flask stub code is from the great Miguel Grindberg (thanks alot, I love your tutorial - especially the videos)
+The flask stub code is from the great Miguel Grindberg (thanks alot, I love Your tutorial - especially the videos)
 ( sorry the code will get better when I advance in your tutorial :)  ) 
 https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
 
@@ -78,7 +85,7 @@ https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
   http://flask.pocoo.org/
 
 
-### best tutorial ever (it has even mega in the name and deserves it)
+### best tutorial ever (it has even mega in name and deserves it)
 
   https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
 
@@ -90,7 +97,7 @@ https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
   http://weasyprint.readthedocs.io/en/latest/index.html
 
 
-### virtual environments
+### python virtual environments
 
   https://docs.python.org/3/library/venv.html
 
