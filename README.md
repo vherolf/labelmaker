@@ -12,7 +12,9 @@ and send it to printer with the lpr command
 
 e.g.
 
+```
   lpr -o PageSize=9_mm__1___Label__Auto -o PrintQuality=Text text_to_print.pdf -P LabelWriter-450-DUO-Tape
+```
 
 This code should work under Linux/MacOSX with python 3.4+
 
@@ -34,11 +36,11 @@ Install your DYMO Labelwriter 450 DUO CUPS drivers and plug it in.
 Install some python3 virtual environment such as venv or (ana)conda
 
 Switch to the python3 virtual environment and run 
-
+```
 pip install -r requirements.txt
 
 bash start.sh
-
+```
 than go in browser to http://localhost:5000
 
 
