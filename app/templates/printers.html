@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% for printer in printers %}
+<div><p>{{ printer.name }} <b>{{ printer.id }}</b></p></div>
+{% endfor %}
+
+<div><p>{{ out }} </p></div>
+
+{% endblock %}

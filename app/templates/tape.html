@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Print Tape</h1>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.tapewidth.label }}
+            {{ form.tapewidth() }}<br>
+        </p>
+        <p>
+            {{ form.tapetext.label }}
+            {{ form.tapetext(size=120) }}<br>
+            {% for error in form.tapetext.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.generate_pdf_only() }} {{ form.generate_pdf_only.label }}</p>
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}

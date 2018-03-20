@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Print Label</h1>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.labeltext.label }}<br>
+            {{ form.labeltext(size=80) }}
+            {% for error in form.labeltext.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.generate_pdf_only() }} {{ form.generate_pdf_only.label }}</p>
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}

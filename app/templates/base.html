@@ -1,0 +1,29 @@
+<html>
+    <head>
+      {% if title %}
+      <title>{{ title }} - Labelmaker</title>
+      {% else %}
+      <title>Welcome to Labelmaker</title>
+      {% endif %}
+    </head>
+    <body>
+        <div>
+            Labelmaker: 
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('label') }}">Labels</a>
+            <a href="{{ url_for('tape') }}" >Tapes</a>
+            <a href="{{ url_for('printers') }}" >Printers</a>
+        </div>
+        <hr>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        {% block content %}{% endblock %}
+    </body>
+</html>
