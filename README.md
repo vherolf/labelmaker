@@ -1,12 +1,11 @@
 # labelmaker
 
-(only proof of concept)
+(only working proof of concept so far)
 
 ## About
-
  
 Its a simple Flask webapp to generate/print labels and tapes with the DYMO LabelWriter® Duo 450.
-The DYMO Labelwriter® Duo 450 works well under Linux/MacOSX with with CUPS.
+The DYMO Labelwriter® Duo 450 works well under Linux/MacOSX with CUPS.
 
 Idea is to make a webapp that generate dynamic pdfs (in lengths) with fixed height for Tapes.
 and send send it to printer with ldr command
@@ -17,9 +16,25 @@ e.g.
 
 This code should work under Linux and MacOSX with python 3.4+
 
+## Installation and running
+
+Install some virtual environment as venv or (ana)conda
+
+Switch to the virtual environment and run 
+
+pip install -r requirements.txt
+
+bash start.sh
+
+than go in browser to http://localhost:5000
+
+
 ## Goals
 
+make code readable and comment it
+
 Find a good python library that does most layouting for me, but is flexible
+
 so far I have played around with.
   - matplotlib
   - weasyprint (as crazy as it sounds - most promissing aproach so far)
@@ -41,13 +56,13 @@ the idea to generate variable pdf and send it to the printer is from the perlmei
 http://www.linux-magazin.de/ausgaben/2015/12/perl-snapshot/
 
 the flask stub code is from the great Miguel Grindberg (thanks alot, I love your tutorial - especially the videos)
-
 ( sorry the code will get better when I advance in your tutorial :)  ) 
-
 https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
 
 
 ## Links
 
+http://flask.pocoo.org/
 https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
+https://matplotlib.org/
 http://weasyprint.readthedocs.io/en/latest/index.html
