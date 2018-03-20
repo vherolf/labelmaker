@@ -4,7 +4,7 @@
 
 ## About
  
-Its a simple Flask webapp to generate/print labels and tapes with the DYMO LabelWriter® Duo 450.
+Its a simple Flask webapp to generate/print labels and tapes with the DYMO LabelWriter® Duo 450. 
 The DYMO Labelwriter® Duo 450 works well under Linux/MacOSX with CUPS.
 
 Idea is to make a webapp that generate dynamic pdfs (in lengths) with fixed height for Tapes.
@@ -15,6 +15,17 @@ e.g.
   lpr -o PageSize=9_mm__1___Label__Auto -o PrintQuality=Text text_to_print.pdf -P LabelWriter-450-DUO-Tape
 
 This code should work under Linux and MacOSX with python 3.4+
+
+DISCLAIMER: 
+
+I dont have any knowledge of other label printers.
+
+With small adaptions and depending on your labelmaker oder tape printer it should work with most DYMO printers. (I have only one so its not tested)
+
+You are on your own with other printers, but ideas are welcome.
+
+If I violate any naming convention or already reserved trade names - please let me now and I will change it.
+
 
 ## Installation and running
 
@@ -62,7 +73,25 @@ https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
 
 ## Links
 
-http://flask.pocoo.org/
-https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
-https://matplotlib.org/
-http://weasyprint.readthedocs.io/en/latest/index.html
+### the awesome flask
+
+  http://flask.pocoo.org/
+
+
+### best tutorial ever (it has even mega in the name and deserves it)
+
+  https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
+
+
+### libraries used
+
+  https://matplotlib.org/
+
+  http://weasyprint.readthedocs.io/en/latest/index.html
+
+
+### virtual environments
+
+  https://docs.python.org/3/library/venv.html
+
+  https://anaconda.org/
