@@ -21,7 +21,7 @@ DISCLAIMER:
 
 I only tested this code with 2 different Dymo models (Dymo duo 450 and the PNP).
 
-If your label/tape printer is able using cups, it should also be possible to use this progam with small adaptions.
+If your label/tape printer is able to use cups, it should also be possible to use this progam.
 
 You are on your own with other printers, but ideas are welcome.
 ```
@@ -36,7 +36,7 @@ You are on your own with other printers, but ideas are welcome.
     TAPEPRINTER="LabelWriter-450-DUO-Tape"
 ```
 
-* Install Python 3.6+ and [pipenv](https://docs.pipenv.org/en/latest/) (if you haven't already)
+* Install [Python 3.6+](https://python.org) and [pipenv](https://docs.pipenv.org/en/latest/) (if you haven't already)
 
 * Clone Repo and than run
 
@@ -83,9 +83,9 @@ https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
 
 ### python virtual environments
 
-  https://docs.python.org/3/library/venv.html
-
-  https://anaconda.org/
+  [Python 3.6+](https://python.org)
+  
+  [pipenv](https://docs.pipenv.org/en/latest/)
 
 
 ```
