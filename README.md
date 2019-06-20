@@ -28,7 +28,7 @@ You are on your own with other printers, but ideas are welcome.
 
 ## Installation and running
 
-* Install your DYMO Labelwriter 450 DUO CUPS drivers and plug it in.
+* Install your CUPS drivers and plug it in.
 
 * Edit the config.py and change the printers to your cups names.
 ```
@@ -36,7 +36,9 @@ You are on your own with other printers, but ideas are welcome.
     TAPEPRINTER="LabelWriter-450-DUO-Tape"
 ```
 
-* Clone Repo and install [pipenv](https://docs.pipenv.org/en/latest/) 
+* Install Python 3.6+ and [pipenv](https://docs.pipenv.org/en/latest/) (if you haven't already)
+
+* Clone Repo and than run
 
 ```
 git clone https://github.com/vherolf/labelmaker.git
