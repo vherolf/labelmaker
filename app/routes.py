@@ -63,7 +63,7 @@ def printLabel( text_to_print = '', generate_pdf_only=True ):
     html.write_pdf('text_to_print.pdf', stylesheets=[css], font_config=font_config)
 
     # lpr -o PrintQuality=Text text_to_print.pdf -P LabelWriter-450-DUO-Label
-    command = [ "lpr", "-o", "PrintQuality=Graphics", "text_to_print.pdf", "-P" ,"LabelWriter-450-DUO-Label" ]
+    command = [ "lpr", "-o", "PrintQuality=Graphics", "text_to_print.pdf", "-P" , app.config["LABELPRINTER"] ]
     print(command)
     if not generate_pdf_only:
         subprocess.call(command)
@@ -84,7 +84,7 @@ def printTape( text_to_print = '', generate_pdf_only=True, tapewidth='9' ):
     pdf_pages.close()
 
     ##  lpr -o PageSize=9_mm__1___Label__Auto -o PrintQuality=Text text_to_print.pdf -P LabelWriter-450-DUO-Tape
-    command = [ "lpr", "-o", cupswidth , "-o", "PrintQuality=Text", "text_to_print.pdf", "-P" ,"LabelWriter-450-DUO-Tape" ]
+    command = [ "lpr", "-o", cupswidth , "-o", "PrintQuality=Text", "text_to_print.pdf", "-P" , app.config["TAPEPRINTER"] ]
     print(command)
     if not generate_pdf_only:
         subprocess.call(command)

@@ -5,7 +5,7 @@
 Labelmaker is a very simple Flask/Python3 webapp to generate/print labels and tapes with the DYMO LabelWriter® Duo 450. 
 The DYMO Labelwriter® Duo 450 works well under Linux/MacOSX with CUPS.
 
-Idea is to make a webapp that generate dynamic pdfs (in lengths) with fixed height for Tapes.
+The idea is to make a webapp that generate dynamic pdfs (in lengths) with fixed height for Tapes.
 and send it to printer with the lpr command
 
 e.g.
@@ -16,29 +16,39 @@ e.g.
 
 This code should work under Linux/MacOSX with python 3.6+
 
+```
 DISCLAIMER: 
 
-I dont have any knowledge of other label printers.
+I only tested this code with 2 different Dymo models (Dymo duo 450 and the PNP).
 
-With small adaptions and depending on your label/tape printer - it should work with most DYMO printers. (I have only one, so its not tested with others)
+If your label/tape printer is able using cups, it should also be possible to use this progam with small adaptions.
 
 You are on your own with other printers, but ideas are welcome.
-
-If I violate any naming convention or already reserved trade names - please let me now and I will change it.
-
+```
 
 ## Installation and running
 
-Install your DYMO Labelwriter 450 DUO CUPS drivers and plug it in.
+* Install your DYMO Labelwriter 450 DUO CUPS drivers and plug it in.
 
-Install pipenv and run
+* Edit the config.py and change the printers to your cups names.
+```
+    LABELPRINTER="LabelWriter-450-DUO-Label"
+    TAPEPRINTER="LabelWriter-450-DUO-Tape"
+```
+
+* Clone Repo and install [pipenv](https://docs.pipenv.org/en/latest/) 
 
 ```
+git clone https://github.com/vherolf/labelmaker.git
+
+cd labelmaker
+
 pipenv install
 
 bash start.sh
 ```
-than go in browser to http://localhost:5000
+
+* Navigate in your favorite browser to http://localhost:5000
 
 
 ## Credits
@@ -74,3 +84,10 @@ https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
   https://docs.python.org/3/library/venv.html
 
   https://anaconda.org/
+
+
+```
+DISCLAIMER:
+
+If I violate any naming convention or already reserved trade names - please let me now and I will change it.
+```

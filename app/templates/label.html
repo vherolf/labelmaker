@@ -8,7 +8,7 @@
             {{ form.labeltext.label }}<br>
             {{ form.labeltext(size=80) }}
             {% for error in form.labeltext.errors %}
-            <span style="color: red;">[{{ error }}]</span>
+            <span class="warning">[{{ error }}]</span>
             {% endfor %}
         </p>
         <p>{{ form.generate_pdf_only() }} {{ form.generate_pdf_only.label }}</p>

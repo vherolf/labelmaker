@@ -6,3 +6,6 @@ class Config(object):
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
         'sqlite:///' + os.path.join(basedir, 'app.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+    # define the cups names of the printers
+    LABELPRINTER="LabelWriter-450-DUO-Label"
+    TAPEPRINTER="LabelWriter-450-DUO-Tape"
