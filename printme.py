@@ -1,13 +1,17 @@
-## commandline printing tool for labels
+## 
 
 import cairo
 import argparse 
+import subprocess
 
 printtext = ""
 font_size = 40  # for 11mm  labels
 font = "SANS"
 font_args=[]
 #font_args=[cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_BOLD]
+LABELPRINTER="LabelWriter-450-DUO-Label"
+TAPEPRINTER="LabelWriter-450-DUO-Tape"
+generate_pdf_only=True
 
 def text_extent(font, font_size, text, *args, **kwargs):
     surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, 0, 0)
@@ -35,7 +39,7 @@ def main() -> None:
      x_advance, y_advance) = text_extent(font, font_size, printtext, *font_args)
     print(x_bearing, y_bearing,text_width, text_height) 
     print(x_advance, y_advance)
-    ps = cairo.PDFSurface("pdffile.pdf", int(text_width), int(text_height))
+    ps = cairo.PDFSurface("text_to_print.pdf", int(text_width), int(text_height))
     cr = cairo.Context(ps)
     
     cr.set_source_rgb(0, 0, 0)
@@ -45,7 +49,12 @@ def main() -> None:
     cr.move_to(-x_bearing, -y_bearing)
     cr.show_text(printtext)
     cr.show_page()
-        
+
+    # lpr -o PrintQuality=Text text_to_print.pdf -P LabelWriter-450-DUO-Label
+    command = [ "lpr", "-o", "PrintQuality=Graphics", "text_to_print.pdf", "-P" , LABELPRINTER ]
+    print(command)
+    if not generate_pdf_only:
+        subprocess.call(command)
+
 if __name__ == "__main__":    
     main()
-
