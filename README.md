@@ -1,7 +1,17 @@
 # labelmaker
 
 ## About
- 
+
+### Tapes from commandline 
+
+```
+usage: printme.py [TEXT] 
+e.g  printme.py cairo is cool
+```
+
+Dependency is pycairo
+
+### Webapp for Labels and Tapes
 Labelmaker is a very simple Flask/Python3 webapp to generate/print labels and tapes with the DYMO LabelWriter® Duo 450. 
 The DYMO Labelwriter® Duo 450 works well under Linux/MacOSX with CUPS.
 
