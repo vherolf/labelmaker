@@ -1,4 +1,4 @@
-## 
+## commandline printing tool for labels
 
 import cairo
 import argparse 
