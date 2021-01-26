@@ -4,7 +4,7 @@ import cairo
 import argparse 
 
 printtext = ""
-font_size = 40  // for 11mm  labels
+font_size = 40  # for 11mm  labels
 font = "SANS"
 font_args=[]
 #font_args=[cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_BOLD]
